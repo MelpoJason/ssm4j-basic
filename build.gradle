@@ -1,0 +1,121 @@
+group 'ssm4j-basic'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+project.ext {
+    springVersion = '4.0.2.RELEASE'
+    mybatisVersion = '3.2.2'
+    mybatisSpringVersion = '1.2.2'
+    mysqlConnectorVersion = '5.1.30'
+//    postgresqlVersion = '9.1-901.jdbc4'
+    jacksonVersion = '1.9.13'
+    log4jVersion = '1.2.12'
+    slf4jVersion = '1.6.6'
+    serveletVersion = '3.0.1'
+    httpClientVersion = '4.1.2'
+//    c3p0Version = '0.9.1.2'
+    jstlVersion = '1.2'
+    druidVersion = '1.0.5'
+    tomcatJdbcVersion = '7.0.53'
+
+//    cglibVersion = '3.1'
+    shiroVersion = '1.2.3'
+//    commonsFileuploadVersion = '1.3.1'
+//    commonsCodecVersion = '1.9'
+//    commonsNetVersion = '3.3'
+//    commonsLoggingVersion = '1.1.3'
+//    commonsCollectionVersion = '3.2.1'
+
+//    googleCollectionsVersion= '1.0'
+//    aspectjVersion = '1.6.12'
+//    nettyVersion = '4.0.18.Final'
+    hibernateValidatorVersion = '5.1.1.Final'
+    mybatisGeneratorVersion = "1.3.2"
+    redisVersion = "2.6.2"
+}
+
+dependencies {
+    //spring dependencies
+    compile "org.springframework:spring-core:$springVersion"
+    compile "org.springframework:spring-web:$springVersion"
+    compile "org.springframework:spring-oxm:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework:spring-jdbc:$springVersion"
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "org.springframework:spring-aop:$springVersion"
+    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.springframework:spring-test:$springVersion"
+
+    //mybatis dependencies
+    compile "org.mybatis:mybatis:$mybatisVersion"
+    compile "org.mybatis:mybatis-spring:$mybatisSpringVersion"
+
+    //mysql connector
+    compile "mysql:mysql-connector-java:$mysqlConnectorVersion"
+
+    //alibaba druid
+    compile "com.alibaba:druid:$druidVersion"
+
+    //jackson jaxb
+    compile "org.codehaus.jackson:jackson-mapper-asl:$jacksonVersion"
+
+    //log4j
+    compile "log4j:log4j:$log4jVersion"
+    compile "org.slf4j:slf4j-api:$slf4jVersion"
+    compile "org.slf4j:slf4j-log4j12:$slf4jVersion"
+
+    //servlet
+    compile "javax.servlet:javax.servlet-api:$serveletVersion"
+    //I didn't find any differences between 'compileOnly' and 'compile' see u later dude
+
+    //jstl  JSP Standard Tag Library
+    compile "javax.servlet:jstl:$jstlVersion"
+
+    //apache
+//    compile "commons-codec:commons-codec:$commonsCodecVersion"
+    compile "org.apache.httpcomponents:httpclient:$httpClientVersion"
+//    compile "commons-net:commons-net:$commonsNetVersion"
+//    compile "commons-logging:commons-logging:$commonsLoggingVersion"
+//    compile "commons-collections:commons-collections:$commonsCollectionVersion"
+
+    //google
+//    compile "com.google.collections:google-collections:$googleCollectionsVersion"
+
+    //cglib Code Generation Library
+//    compile "cglib:cglib-nodep:$cglibVersion"
+
+    //shiro
+    compile "org.apache.shiro:shiro-spring:$shiroVersion"
+    compile "org.apache.shiro:shiro-ehcache:$shiroVersion"
+    compile "org.apache.shiro:shiro-core:$shiroVersion"
+    compile "org.apache.shiro:shiro-web:$shiroVersion"
+    compile "org.apache.shiro:shiro-quartz:$shiroVersion"
+
+    //aspectj
+//    compile "org.aspectj:aspectjweaver:$aspectjVersion"
+//    compile "org.aspectj:aspectjrt:$aspectjVersion"
+
+    // hibernate-validator
+    compile "org.hibernate:hibernate-validator:$hibernateValidatorVersion"
+
+    //netty
+//    compile "io.netty:netty-all:$nettyVersion"
+
+    //redis
+    compile "redis.clients:jedis:$redisVersion"
+
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile "org.mybatis.generator:mybatis-generator-core:$mybatisGeneratorVersion"
+}
