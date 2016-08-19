@@ -29,14 +29,15 @@ project.ext {
 
 //    cglibVersion = '3.1'
     shiroVersion = '1.2.3'
-//    commonsFileuploadVersion = '1.3.1'
-//    commonsCodecVersion = '1.9'
-//    commonsNetVersion = '3.3'
-//    commonsLoggingVersion = '1.1.3'
-//    commonsCollectionVersion = '3.2.1'
+    commonsFileuploadVersion = '1.3.1'
+    commonsCodecVersion = '1.9'
+    commonsNetVersion = '3.3'
+    commonsLoggingVersion = '1.1.3'
+    commonsCollectionVersion = '3.2.1'
 
 //    googleCollectionsVersion= '1.0'
 //    aspectjVersion = '1.6.12'
+
 //    nettyVersion = '4.0.18.Final'
     hibernateValidatorVersion = '5.1.1.Final'
     mybatisGeneratorVersion = "1.3.3"
@@ -83,9 +84,10 @@ dependencies {
     //apache
 //    compile "commons-codec:commons-codec:$commonsCodecVersion"
     compile "org.apache.httpcomponents:httpclient:$httpClientVersion"
-//    compile "commons-net:commons-net:$commonsNetVersion"
-//    compile "commons-logging:commons-logging:$commonsLoggingVersion"
-//    compile "commons-collections:commons-collections:$commonsCollectionVersion"
+    compile "commons-fileupload:commons-fileupload:$commonsFileuploadVersion"
+    compile "commons-net:commons-net:$commonsNetVersion"
+    compile "commons-logging:commons-logging:$commonsLoggingVersion"
+    compile "commons-collections:commons-collections:$commonsCollectionVersion"
 
     //google
 //    compile "com.google.collections:google-collections:$googleCollectionsVersion"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demoexercise.ssm4j.web.dao.UserMapper">
+
+  <resultMap id="UserMapper" type="User">
+    <id column="id" property="_id"/>
+    <result column="name" property="_name" jdbcType="VARCHAR"/>
+    <result column="password" property="_password" jdbcType="VARCHAR"/>
+    <result column="email" property="_email" jdbcType="VARCHAR"/>
+    <result column="state" property="state" jdbcType="BOOLEAN"/>
+    <result column="createDate" property="createDate" jdbcType="TIMESTAMP"/>
+    <result column="content" property="content" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <select id="getAllData" resultType="User">
+    SELECT * FROM users
+  </select>
+
+  <select id="getAllDataByDate" parameterType="int" resultType="User">
+    SELECT * FROM users
+
+  </select>
+
+</mapper>

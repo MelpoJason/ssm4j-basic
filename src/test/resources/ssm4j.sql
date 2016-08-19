@@ -11,12 +11,12 @@ CREATE TABLE users (
   _name VARCHAR(30) NOT NULL COMMENT 'name',
   _password VARCHAR(100) NOT NULL COMMENT 'password',
   _email VARCHAR(100) NOT NULL COMMENT 'email',
+  state BOOLEAN NOT NULL COMMENT 'state',
+  createDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP() COMMENT 'create date',
   content VARCHAR(200) COMMENT 'content'
 );
 
-INSERT INTO users  (users._id,users._name,users._password, users._email, users.content)
-  value (45, 'Jason', '------','jasonchan9280@gmail.com','test data');
+INSERT INTO users  (users._id,users._name,users._password, users._email, users.state,users.createDate,users.content)
+  value (45, 'Jason', '------','jasonchan9280@gmail.com', TRUE , now(),'test data');
 
-SELECT  * from users t where t._id = 45;
-
-ALTER TABLE users add CONSTRAINT PK_test_table PRIMARY KEY (_id, _name ,_password, _email)
+ALTER TABLE users add CONSTRAINT PK_test_table PRIMARY KEY (_id, _name ,_password, _email, state);
